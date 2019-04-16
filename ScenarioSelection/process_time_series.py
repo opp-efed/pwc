@@ -15,15 +15,12 @@ def find_files(file_dir, file_format, run_filter=None, scenario_filter=None):
                 yield scenario_id, os.path.join(file_dir, f)
 
 
-def monthly_stats(table):
-    # Get daily values for monthly standard deviation
-    table['std'] = table.resample('M').transform('std').add_suffix('_std')
+def monthly_stats(table, field):
+    """ Calculate standard deviation by month use to create daily low/high values """
+    std = table.resample('M').transform('std').add_suffix('_std')
 
     # Create range from standard devation
-    table['wc_conc_high'] = table.wc_conc + table.std
-    table['wc_conc_low'] = table.wc_conc - table.std
-
-    return table
+    return table[field] - std, table[field] + std
 
 
 def read_file(path, header):
@@ -56,7 +53,7 @@ def main():
         table = read_file(file, infile_header)
 
         # Demo of grouping by month
-        table = monthly_stats(table)
+        table['wc_conc_low'], table['wc_conc_high'] = monthly_stats(table, 'wc_conc')
 
         # Calculate area under curve
         aoc_trapezoid = np.trapz(table['wc_conc'])
