@@ -5,10 +5,6 @@ import datetime as dt
 import numpy as np
 
 
-def area_under_curve(table, field):
-    return table[field].sum(), np.trapz(table[field])
-
-
 def find_files(file_dir, file_format, run_filter=None, scenario_filter=None):
     for f in os.listdir(file_dir):
         match = re.match(file_format, f)
@@ -17,6 +13,17 @@ def find_files(file_dir, file_format, run_filter=None, scenario_filter=None):
             if (scenario_filter is None or scenario_id in scenario_filter) and \
                     (run_filter is None or run_id in run_filter):
                 yield scenario_id, os.path.join(file_dir, f)
+
+
+def monthly_stats(table):
+    # Get daily values for monthly standard deviation
+    table['std'] = table.resample('M').transform('std').add_suffix('_std')
+
+    # Create range from standard devation
+    table['wc_conc_high'] = table.wc_conc + table.std
+    table['wc_conc_low'] = table.wc_conc - table.std
+
+    return table
 
 
 def read_file(path, header):
@@ -38,22 +45,27 @@ def main():
     time_series_dir = "E:/PWC/777e"
     file_format = re.compile("(.+?)_(.+?)_Pond_Parent_daily.csv")
     infile_header = ['depth', 'wc_conc', 'benthic_conc', 'peak_wc_conc']
-    outfile_header = ['scenario_id', 'aoc_sum', 'aoc_trapezoid']
+    outfile_header = ['scenario_id', 'aoc_sum', 'aoc_trapezoid', 'aoc_high', 'aoc_low']
 
     # Initialize output table
     summary_table = []
 
     # Loop through all files in directory, apply filter if needed
     for scenario_id, file in find_files(time_series_dir, file_format):
-
         # Read the input file
         table = read_file(file, infile_header)
 
+        # Demo of grouping by month
+        table = monthly_stats(table)
+
         # Calculate area under curve
-        aoc_sum, aoc_trapezoid = area_under_curve(table, 'wc_conc')
+        aoc_trapezoid = np.trapz(table['wc_conc'])
+        aoc_sum = table['wc_conc'].sum()
+        aoc_high = table['wc_conc_high'].sum()
+        aoc_low = table['wc_conc_low'].sum()
 
         # Add summary results to output table
-        summary_table.append([scenario_id, aoc_sum, aoc_trapezoid])
+        summary_table.append([scenario_id, aoc_sum, aoc_trapezoid, aoc_high, aoc_low])
 
     # Write the summary table to output file
     write_to_file(summary_table, out_file, outfile_header)

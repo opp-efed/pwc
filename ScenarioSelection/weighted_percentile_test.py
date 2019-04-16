@@ -1,3 +1,9 @@
+import os
+import numpy as np
+
+from read_summary_file import read_scenarios, read_pwc_output
+
+
 def weighted_percentile_test(table, sample_size=1000, test_field='year'):
     table = table.iloc[:sample_size]
     table.area = table.area.floordiv(900 * 900)  # inflated area to real area to pixels
@@ -18,5 +24,23 @@ def weighted_percentile_test(table, sample_size=1000, test_field='year'):
 
     # Summary
     summary = brute_results.merge(weighted[['line_num', 'weighted_percentile']], on='line_num', how='left')
-    summary.to_csv("comparison.csv")
+    return summary
 
+
+def main():
+    """ Set run parameters here """
+    scenario_table = os.path.join("Input", "Samples", "corn_60k.csv")  # the table used as input for the pwc run
+    summary_file = os.path.join("Input", "Samples", "Summary_SW_60k.txt")  # the output file from the pwc run
+    output_dir = "Output"  # where output data will be written
+    """"""""""""""""""""""""""""""
+
+    # Join the scenarios data with the computed concentrations
+    raw_scenarios = read_scenarios(scenario_table)
+    pwc_output = read_pwc_output(summary_file)
+    scenarios = raw_scenarios.merge(pwc_output, on='line_num', how='left', suffixes=('_raw', '_pwc'))
+
+    summary = weighted_percentile_test(scenarios)
+    summary.to_csv(os.path.join(output_dir, "comparison.csv"))
+
+
+main()
