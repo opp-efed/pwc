@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="188a56b8-a3ad-4689-a049-3afe23591665" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ScenarioSelection/read_summary_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/ScenarioSelection/read_summary_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScenarioSelection/paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/ScenarioSelection/paths.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,32 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScenarioSelection/read_summary_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-520">
-              <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-              <folding>
-                <element signature="e#159#178#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ScenarioSelection/Output/test_summary2.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state>
-              <caret column="83" selection-start-column="83" selection-end-column="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ScenarioSelection/paths.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+            <state relative-caret-position="102">
+              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -75,16 +64,16 @@
         <option value="$PROJECT_DIR$/ScenarioSelection/Output/.gitignore" />
         <option value="$PROJECT_DIR$/ScenarioSelection/.gitignore" />
         <option value="$PROJECT_DIR$/ScenarioSelection/process_time_series.py" />
-        <option value="$PROJECT_DIR$/ScenarioSelection/paths.py" />
         <option value="$PROJECT_DIR$/ScenarioSelection/read_summary_file.py" />
+        <option value="$PROJECT_DIR$/ScenarioSelection/paths.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-60" />
-    <option name="y" value="66" />
-    <option name="width" value="1560" />
-    <option name="height" value="1194" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1271" />
+    <option name="y" value="-9" />
+    <option name="width" value="1298" />
+    <option name="height" value="993" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -103,12 +92,6 @@
               <item name="pwc" type="b2602c69:ProjectViewProjectNode" />
               <item name="pwc" type="462c0819:PsiDirectoryNode" />
               <item name="ScenarioSelection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pwc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pwc" type="462c0819:PsiDirectoryNode" />
-              <item name="ScenarioSelection" type="462c0819:PsiDirectoryNode" />
-              <item name="Output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,23 +228,23 @@
       <workItem from="1561467998018" duration="1257000" />
       <workItem from="1561490858376" duration="989000" />
       <workItem from="1561551781673" duration="1208000" />
-      <workItem from="1561570905401" duration="2199000" />
+      <workItem from="1561570905401" duration="3321000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26175000" />
+    <option name="totallyTimeSpent" value="27297000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="1273" y="-7" width="1038" height="794" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22267206" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2811861" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42451155" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21752267" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -390,13 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ScenarioSelection/paths.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ScenarioSelection/Output/test_summary2.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state>
@@ -416,11 +392,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ScenarioSelection/read_summary_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-520">
-          <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-          <folding>
-            <element signature="e#159#178#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScenarioSelection/paths.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
         </state>
       </provider>
     </entry>
