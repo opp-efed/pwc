@@ -1,3 +1,8 @@
+"""
+Searches for all PWC daily output files (chemographs) in a directory,
+applies formatting, performs calculations, and writes to file
+"""
+
 import os
 import re
 import pandas as pd
