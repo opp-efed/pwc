@@ -76,7 +76,7 @@ def select_scenarios(scenarios, test_fields, selection_pct, window):
         selection['percentile'] = selection[pct]
         all_selected.append(selection)
     all_selected = pd.concat(all_selected, axis=0)
-    return all_selected.sort_values(['duration', 'area'], ascending=[False, True])[keep_fields]
+    return all_selected.sort_values(['duration', 'area'], ascending=[True, False])[keep_fields]
 
 
 def main():
