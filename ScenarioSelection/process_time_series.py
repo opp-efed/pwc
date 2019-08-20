@@ -68,6 +68,8 @@ def main():
         # Add summary results to output table
         summary_table.append([scenario_id, auc_sum, auc_trapezoid, auc_high, auc_low])
 
+    print(summary_table)
+    exit()
     # Write the summary table to output file
     write_to_file(summary_table, out_file, outfile_header)
 

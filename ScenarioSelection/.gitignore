@@ -1,2 +1,6 @@
-Output/*.csv
-Maps/*
+!*/.gitignore
+Dev
+Input
+Output
+Maps
+sandbox.py
